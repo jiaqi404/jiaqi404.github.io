@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/2334289f50.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- ---------------header------------------ -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a href="/index.html"><span class="sub-sub-sub-title">Jiaqi Zhang</span></a>
+                <ul>
+                    <li><a href="/pages/projects.html"><span class="text">Gallery</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- ---------------content------------------ -->
+    <div id="content">
+        <div class="container contents" style="padding-top: 48px;">
+            <div class="content-head" style="background-image: url(/images/project3-cover.jpg)">
+                <a href="/pages/projects.html" class="button btn4"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="row">
+                <div class="content-left">
+                    <h1 class="title">Four Seasons Fans</h1>
+                    <p class="sub-sub-title-small">AR App Development</p>
+                    <p class="text">The folding fan, an essential part of Chinese traditional culture, carries rich cultural and historical value. Beyond its utilitarian function 
+                        as a cooling device, it also served as a canvas for artistic expressions in ancient China. Furthermore, the four seasons have held a 
+                        pivotal role in Chinese art for centuries. This has ignited our curiosity: What if we were to harness modern technologies, such as 
+                        shaders, to craft contemporary fan art and bring it to life through the immersive medium of AR?</p>
+                    <h2 class="sub-title">Fan Handle Design</h2>
+                    <div class="row image-container" style="margin: 0 96px;">
+                        <img src="/images/project3/扇柄春-resize.png" style="width: 7%;">
+                        <img src="/images/project3/扇柄夏-resize.png" style="width: 7%;">
+                        <img src="/images/project3/扇柄秋-resize.png" style="width: 7%;">
+                        <img src="/images/project3/扇柄冬-resize.png" style="width: 7%;">
+                    </div>
+                    <p class="text">The folding fan can be roughly divided into two parts: the handle and the fan face. For the handles, I created mood boards for each 
+                        season and then used Blender to model them.
+                    </p>
+                    <h2 class="sub-title">Fan Face Design</h2>
+                    <div class="row image-container" style="margin-top: 16px;">
+                        <img src="/images/project3/春-resize.png" style="width: 45%;">
+                        <img src="/images/project3/夏-resize.png" style="width: 45%;">
+                        <img src="/images/project3/秋-resize.png" style="width: 45%;">
+                        <img src="/images/project3/冬-resize.png" style="width: 45%;">
+                    </div>
+                    <p class="text">For fan faces, we used different technologies to utilize four different shaders.</p>
+                    <p class="text"><b>Fan of Spring</b>: For the fan of spring, we implemented a vine growing effect, 
+                        using particle system. Through adjusting parameters, we could 
+                        define vine's shape, material, growing speed and so on.</p>
+                    <p class="text"><b>Fan of Summer</b>: For our summer-themed fan, we envisioned a water-based 
+                        design. Crafting this water fan involves complex processes like 
+                        UV flow, mask testing, polar coordinate rotation, and more. A key 
+                        element is the time-controlled UV flow, which enables us to 
+                        simulate water flow.</p>
+                    <p class="text"><b>Fan of Autumn</b>: Thinking of the Autumn Fan brings to mind one adorned with 
+                        maple leaves. Its creation has two parts: growing the maple 
+                        leaves, similar to the Spring Fan using a particle system, and the 
+                        falling and withering of leaves. We employed a shader script to 
+                        achieve a rim dissolve material, simulating leaf burn. </p>
+                    <p class="text"><b>Fan of Winter</b>: The Winter Fan concept is simple: we wanted to make a freezing 
+                        fan. To achieve this, we added an ice material over the original 
+                        fan surface. By adjusting the material's opacity, we created a 
+                        gradual freezing effect. </p>
+                    <h2 class="sub-title">AR Effect</h2>
+                    <p class="text">We employed the Unity library Vuforia for AR effects. Vuforia simplifies AR 
+                        implementation by selecting recognition types, uploading images, and downloading Unity 
+                        packages from its official website.</p>
+                    <img src="/images/project3/Ar.gif">
+                    <h2 class="sub-title">Demo Video</h2>
+                    <div class="ytb-video-container">
+                        <iframe src="https://www.youtube.com/embed/k5dn5IYgzTI" allowfullscreen frameborder="0" class="ytb-video"></iframe>
+                    </div>
+                    <div class="next-page">
+                        <div class="former-page">
+                            <a href="/pages/projects/project4.html" class="button btn5"><i class="fa-solid fa-arrow-left"></i></a>
+                            <span class="text">Escape</span>
+                        </div>
+                        <div class="later-page">
+                            <span class="text">Forests of SDMDA</span>
+                            <a href="/pages/projects/project5.html" class="button btn5"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="content-info-list">
+                        <ul>
+                            <li>
+                                <p class="sub-sub-title-small">Platform</p>
+                                <p class="notation">Unity, Vuforia, Android</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">My Roles</p>
+                                <p class="notation">Modeling, Animating, Coding</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Team</p>
+                                <p class="notation">Jiaqi Tan, Liwen Yi, Yunhua Tan, Yi Deng</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Stard and End</p>
+                                <p class="notation">2023.03-2023.04</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Introduction</p>
+                                <p class="notation">"Four Seasons Fans" is a Unity-based AR mobile app that lets users appreciate our 
+                                    meticulously designed folding fan models, each representing the beauty of a different 
+                                    season. Through innovative use of augmented reality (AR) technology, you can view and 
+                                    interact with these models in the real world.
+                                    </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------go-to-top------------------ -->
+    <div id="go-to-top">
+        <div class="container bottom">
+            <a href="#top" class="button btn5"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <!-- ---------------copyright------------------ -->
+    <div id="copyright">
+        <p class="notation" style="color: #fff;">copyright © 2023 Jiaqi Zhang</p>
+    </div>
+</body>
+</html>

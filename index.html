@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2334289f50.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- ---------------header------------------ -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a href="#"><span class="sub-sub-sub-title">Jiaqi Zhang</span></a>
+                <ul>
+                    <li><a href="pages/projects.html"><span class="text">Gallery</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- ---------------intro------------------ -->
+    <div id="intro">
+        <div class="container contents">
+            <div class="card-lists">
+                <div class="container-card">
+                    <div class="card">
+                        <div class="card-front">
+                            <span class="notation">About the past</span>
+                        </div>
+                        <div class="card-back">
+                            <p class="sub-sub-sub-title" style="background-image: url(images/zodiac1.png);">About the past</p>
+                            <p class="text">I was born in 2002 in Shenzhen, China.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card">
+                        <div class="card-front" style="background-image: url(images/zodiac2.png);">
+                            <span class="notation">About the present</span>
+                        </div>
+                        <div class="card-back">
+                            <p class="sub-sub-sub-title">About the present</p>
+                            <p class="text">Hi. This is Jiaqi. Welcome to my website.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card">
+                        <div class="card-front" style="background-image: url(images/zodiac3.png);">
+                            <span class="notation">About the future</span>
+                        </div>
+                        <div class="card-back">
+                            <p class="sub-sub-sub-title">About the future</p>
+                            <p class="text">I'm on my way to be a better designer, programmer and developer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------about------------------ -->
+    <div id="about">
+        <div class="container contents">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="/images/me.jpg" class="about-img">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="title">Hello!<br>I'm Jiaqi.</h1>
+                    <p class="text" style="margin-bottom: 16px;">I am a designer and developer, with a wide range of interests and 
+                        multidisciplinary skills. 
+                        I'm current studying in Beijing University of Posts and Telecommunications, 
+                        and expected to graduate with my undergraduate degree in 2024.
+                        In the future, I aspire to become a creative developer and have my own product.
+                    </p>
+                    <p class="text"><i class="fa-solid fa-envelope" style="color: #121212; margin-right: 16px;"></i>2020211178@bupt.cn</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')"><span class="sub-sub-title">Skills</span></p>
+                        <p class="tab-links" onclick="opentab('education')"><span class="sub-sub-title">Education</span></p>
+                        <p class="tab-links" onclick="opentab('experience')"><span class="sub-sub-title">Experiences</span></p>
+                        <p class="tab-links" onclick="opentab('interests')"><span class="sub-sub-title">Interests</span></p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span class="sub-sub-sub-title">Design</span><br><span class="notation">UI&UX Design, Branding, Graphic Design...</span></li>
+                            <li><span class="sub-sub-sub-title">Game Development</span><br><span class="notation">Unity</span></li>
+                            <li><span class="sub-sub-sub-title">Coding</span><br><span class="notation">Python, Java, C++, C#</span></li>
+                            <li><span class="sub-sub-sub-title">3D Modeling and Rendering</span><br><span class="notation">Blender, C4D</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span class="notation">Sep 2020 - Present</span>
+                                <br><span class="sub-sub-sub-title">Beijing University of Posts and Telecommunications</span>
+                                <br><span class="notation">Bachelor of Science in Digital Media Technology</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span class="notation">Oct 2023 - Nov 2023</span>
+                                <br><span class="sub-sub-sub-title">GuoSheng Hangke (Suzhou) Intelligent Technology Co., Ltd.</span>
+                                <br><span class="notation">Programmer(outsourcing)</span></li>
+                            <li><span class="notation">Nov 2022 - Jul 2023</span>
+                                <br><span class="sub-sub-sub-title">Sketch World: Deep Learning-based Intelligent Creative Platform</span>
+                                <br><span class="notation">College Student Entrepreneurship team</span></li>
+                            <li><span class="notation">Apr 2022 - Oct 2022</span>
+                                <br><span class="sub-sub-sub-title">Future Laboratory, Tsinghua University</span>
+                                <br><span class="sub-sub-sub-title">Aging User Experience and Service System Design Research Center</span>
+                                <br><span class="notation">Intern</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="interests">
+                        <ul>
+                            <li><span class="sub-sub-sub-title">Games</span><br><span class="notation">Disco Elysium, Celeste, Splatoon 3...</span></li>
+                            <li><span class="sub-sub-sub-title">Movies</span><br><span class="notation">Thelma & Louise, Infernal Affairs(無間道), Any movie of Christopher Nolan's...</span></li>
+                            <li><span class="sub-sub-sub-title">Mysticism</span><br><span class="notation">Astrology, Tarot...</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------projects------------------ -->
+    <div id="projects">
+        <div class="container contents">
+            <h1 class="title">Gallery</h1>
+            <div class="projects-list">
+                <a href="/pages/projects/project1.html">
+                    <div class="project">
+                        <img src="images/project1-cover.jpg">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">Tomorrow</h3>
+                            <p class="text">UI & UX Design for a Mental Health App</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/pages/projects/project2.html">
+                    <div class="project">
+                        <img src="images/project2-cover.jpg">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">EmoEar</h3>
+                            <p class="text">Interactive Device for Emotion Detecting</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/pages/projects/project4.html">
+                    <div class="project">
+                        <img src="images/project4-cover.png">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">Escape</h3>
+                            <p class="text">First-Person VR Game</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="projects-list">
+                <a href="/pages/projects/project3.html">
+                    <div class="project">
+                        <img src="images/project3-cover.jpg">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">Four Seasons Fans</h3>
+                            <p class="text">AR App Development</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/pages/projects/project5.html">
+                    <div class="project">
+                        <img src="images/project5-cover.jpg">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">Forests of SDMDA</h3>
+                            <p class="text">AR App Development</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/pages/projects/project6.html">
+                    <div class="project">
+                        <img src="images/project6-cover.png">
+                        <div class="layer">
+                            <h3 class="sub-sub-title">Alien Express</h3>
+                            <p class="text">Generative Art</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="pages/projects.html" class="button">See More</a>
+        </div>
+    </div>
+    <!-- ---------------go-to-top------------------ -->
+    <div id="go-to-top">
+        <div class="container bottom">
+            <a href="#top" class="button btn5"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <!-- ---------------copyright------------------ -->
+    <div id="copyright">
+        <p class="notation" style="color: #fff;">copyright © 2023 Jiaqi Zhang</p>
+    </div>
+    <!-- ---------------scripts-------------------- -->
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links")
+        var tabcontents=document.getElementsByClassName("tab-contents")
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
