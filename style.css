@@ -695,15 +695,15 @@ nav ul li a:hover::after{
     }
     
     .sub-title{
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .sub-sub-title{
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .sub-sub-title-small{
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .sub-sub-sub-title{
@@ -772,5 +772,27 @@ nav ul li a:hover::after{
 
     .content-head{
         aspect-ratio: 1/1;
+    }
+
+    .former-page span{
+        margin-left: 4px;
+    }
+    
+    .later-page span{
+        margin-right: 4px;
+    }
+
+    .button.btn5, .button.btn4{
+        padding: 10px 12px;
+    }
+
+    .gallery{
+        grid-template-rows: repeat(8, 7vw);
+        grid-gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    .gallery.g2{
+        grid-template-rows: repeat(12, 6vw);
     }
 }
