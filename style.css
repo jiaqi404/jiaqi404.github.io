@@ -734,10 +734,6 @@ nav ul li a:hover::after{
         margin-bottom: 8px;
     }
 
-    .tab-links::after{
-        height: 1px;
-    }
-
     .content-left, .content-right{
         flex-basis: 100%;
     }
