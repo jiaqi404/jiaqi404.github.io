@@ -247,7 +247,7 @@ nav ul li a:hover::after{
 .about-col-2{
     flex-basis: 50%;
     margin-right: 5%;
-    margin-top: 24px;
+    margin-top: 16px;
 }
 
 .about-img{
