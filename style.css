@@ -257,8 +257,8 @@ nav ul li a:hover::after{
 
 .tab-titles{
     display: flex;
-    margin-top: 32px;
-    margin-bottom: 24px;
+    margin-top: 24px;
+    margin-bottom: 18px;
 }
 
 .tab-links{
@@ -274,7 +274,7 @@ nav ul li a:hover::after{
     background: #121212;
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -2px;
     transition: 0.4s;
 }
 
