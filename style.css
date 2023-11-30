@@ -295,6 +295,17 @@ nav ul li a:hover::after{
     display: block;
 }
 
+.fa-solid.fa-envelope{
+    color: #121212; 
+    margin-right: 16px;
+}
+
+.fa-solid.fa-file{
+    color: #121212; 
+    margin-right: 14px; 
+    margin-left: 2px;
+}
+
 /* ---------------projects----------------- */
 
 #projects{
@@ -670,12 +681,12 @@ nav ul li a:hover::after{
     }
 
     .container{
-        padding: 12px 3%;
+        padding: 14px 3%;
     }
     
     .container.contents{
         margin: 0 6%;
-        padding: 48px 0;
+        padding: 36px 0;
     }
 
     .container-card{
@@ -727,11 +738,20 @@ nav ul li a:hover::after{
     }
 
     .tab-titles{
-        display: block;
+        margin-bottom: 0;
+        /* display: block; */
     }
 
     .tab-links{
-        margin-bottom: 8px;
+        margin-right: 16px;
+    }
+
+    .sub-sub-title.tab-link{
+        font-size: 16px;
+    }
+
+    .fa-solid.fa-file{
+        margin-right: 12px;
     }
 
     .content-left, .content-right{
@@ -775,11 +795,11 @@ nav ul li a:hover::after{
     }
 
     .former-page span{
-        margin-left: 4px;
+        margin-left: 2px;
     }
     
     .later-page span{
-        margin-right: 4px;
+        margin-right: 2px;
     }
 
     .button.btn5, .button.btn4{
@@ -787,7 +807,7 @@ nav ul li a:hover::after{
     }
 
     .gallery{
-        grid-template-rows: repeat(8, 7vw);
+        grid-template-rows: repeat(8, 9vw);
         grid-gap: 4px;
         margin-bottom: 4px;
     }
