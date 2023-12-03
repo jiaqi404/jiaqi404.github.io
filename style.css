@@ -24,6 +24,14 @@ body{
     padding: 96px 0;
 }
 
+.container.contents.no-bot-pad{
+    padding-bottom: 0;
+}
+
+.container.contents.narrow-pad{
+    padding: 16px 0;
+}
+
 .container.bottom{
     padding: 0 3% 48px;
 }
@@ -82,6 +90,14 @@ a{
     color: #121212;
     font-size: 16px;
     line-height: 140%;
+}
+
+.text.link{
+    text-decoration: underline;
+}
+
+.text.line{
+    margin: 0 4px;
 }
 
 .notation{
@@ -234,6 +250,11 @@ nav ul li a:hover::after{
     padding: 24px 0;
 }
 
+#about-details{
+    width: 100%;
+    padding: 24px 0;
+}
+
 .row{
     display: flex;
     justify-content: space-between;
@@ -242,18 +263,39 @@ nav ul li a:hover::after{
 
 .about-col-1{
     flex-basis: 40%;
+    /* overflow: hidden; */
+}
+
+.about-col-1.about-details{
+    padding-top: 8px;
 }
 
 .about-col-2{
     flex-basis: 50%;
     margin-right: 5%;
-    margin-top: 16px;
+    margin-top: 28px;
+}
+
+.about-col-2.about-details{
+    margin-top: 0;
+    padding-top: 8px;
+    border-top: 1.5px solid;
+}
+
+.about-experience{
+    margin-bottom: 16px;
 }
 
 .about-img{
     width: 100%;
     border: 1.5px solid;
 }
+
+/* .about-img.about-page{
+    height: 400px;
+    object-fit: cover;
+    object-position: 50% 35%;
+} */
 
 .tab-titles{
     display: flex;
@@ -295,15 +337,30 @@ nav ul li a:hover::after{
     display: block;
 }
 
-.fa-solid.fa-envelope{
-    color: #121212; 
+.info-links{
+    margin-bottom: 24px;
+}
+
+.info-links li{
+    list-style: none;
+}
+
+.info-links li a{
+    display: inline-block;
+}
+
+.info-links li i{
     margin-right: 16px;
 }
 
-.fa-solid.fa-file{
-    color: #121212; 
-    margin-right: 14px; 
-    margin-left: 2px;
+.sns-links li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 14px;
+}
+
+.sns-links li i{
+    font-size: 22px;
 }
 
 /* ---------------projects----------------- */
@@ -701,6 +758,10 @@ nav ul li a:hover::after{
         padding: 16px 0;
     }
 
+    nav ul li{
+        margin: 0px 8px;
+    }
+
     .title{
         font-size: 32px;
     }
@@ -729,8 +790,20 @@ nav ul li a:hover::after{
         font-size: 12px;
     }
 
+    #about-details{
+        padding: 4px 0 36px;
+    }
+
     .about-col-1, .about-col-2{
         flex-basis: 100%;
+    }
+
+    .about-col-2{
+        margin-right: 0;
+    }
+
+    .about-col-1.about-details{
+        padding-top: 0;
     }
     
     #go-to-top{
