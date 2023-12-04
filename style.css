@@ -806,6 +806,10 @@ nav ul li a:hover::after{
     .about-col-1.about-details{
         padding-top: 0;
     }
+
+    .about-img{
+        height: 400px;
+    }
     
     #go-to-top{
         display: none;
