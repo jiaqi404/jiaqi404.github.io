@@ -263,7 +263,7 @@ nav ul li a:hover::after{
 
 .about-col-1{
     flex-basis: 40%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .about-col-1.about-details{
@@ -289,13 +289,14 @@ nav ul li a:hover::after{
 .about-img{
     width: 100%;
     border: 1.5px solid;
-}
-
-/* .about-img.about-page{
-    height: 400px;
+    height: 620px;
     object-fit: cover;
     object-position: 50% 35%;
-} */
+}
+
+.about-img.img2{
+    object-position: 50% 60%;
+}
 
 .tab-titles{
     display: flex;
