@@ -106,6 +106,10 @@ a{
     line-height: 140%;
 }
 
+.notation.line{
+    margin: 0 4px;
+}
+
 /* ---------------header----------------- */
 
 #header{
@@ -362,6 +366,37 @@ nav ul li a:hover::after{
 
 .sns-links li i{
     font-size: 22px;
+}
+
+.lang-choices{
+    float: right;
+    display: flex;
+}
+
+.lang-links{
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.about-contents{
+    display: none;
+}
+
+.about-contents.active-tab{
+    display: block;
+}
+
+.about-contents-2{
+    display: none;
+}
+
+.about-contents-2.active-tab{
+    display: block;
+}
+
+.certificate-link{
+    float: right;
+    display: flex;
 }
 
 /* ---------------projects----------------- */
