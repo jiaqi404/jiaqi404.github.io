@@ -461,7 +461,7 @@ nav ul li a:hover::after{
 
 .button{
     display: block;
-    margin: 48px auto 0;
+    margin: 36px auto 8px;
     width: fit-content;
     border: 1.5px solid #121212;
     padding: 16px 36px;
@@ -715,6 +715,10 @@ nav ul li a:hover::after{
     width: 7%;
 }
 
+.row.image-container.project10 img{
+    width: 49%;
+}
+
 .contents-row{
     display: flex;
     justify-content: space-between;
@@ -799,27 +803,27 @@ nav ul li a:hover::after{
     }
 
     .title{
-        font-size: 32px;
+        font-size: 30px;
     }
     
     .sub-title{
-        font-size: 24px;
+        font-size: 22px;
     }
     
     .sub-sub-title{
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .sub-sub-title-small{
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .sub-sub-sub-title{
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .text{
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .notation{
@@ -915,8 +919,16 @@ nav ul li a:hover::after{
         margin-right: 2px;
     }
 
-    .button.btn5, .button.btn4{
+    .button.btn5{
+        padding: 8px 10px;
+    }
+
+    .button.btn4{
         padding: 10px 12px;
+    }
+    
+    .button.btn6{
+        padding: 14px 20px;
     }
 
     .gallery{
