@@ -811,7 +811,7 @@ nav ul li a:hover::after{
     }
     
     .sub-sub-title{
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .sub-sub-title-small{
@@ -819,10 +819,14 @@ nav ul li a:hover::after{
     }
     
     .sub-sub-sub-title{
-        font-size: 12px;
+        font-size: 14px;
     }
     
     .text{
+        font-size: 14px;
+    }
+
+    .text.small{
         font-size: 12px;
     }
     
@@ -928,7 +932,7 @@ nav ul li a:hover::after{
     }
     
     .button.btn6{
-        padding: 14px 20px;
+        padding: 12px 20px;
     }
 
     .gallery{
