@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiaqi Zhang</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <script src="https://kit.fontawesome.com/2334289f50.js" crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5NN9DHWCX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F5NN9DHWCX');
+</script>
+<body>
+    <!-- ---------------header------------------ -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a href="/index.html"><span class="sub-sub-sub-title">Jiaqi Zhang</span></a>
+                <ul>
+                    <li><a href="/pages/about.html"><span class="text">About</span></a></li>
+                    <li><a href="/pages/projects.html"><span class="text">Projects</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- ---------------content------------------ -->
+    <div id="content">
+        <div class="container contents" style="padding-top: 48px;">
+            <div class="content-head" style="background-image: url(/images/project18/outputs-result-2.png);">
+                <a href="/pages/projects.html" class="button btn4"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="row">
+                <div class="content-left">
+                    <h1 class="title">Sketch Modeling</h1>
+                    <p class="sub-sub-title-small">3D mesh generation from a sketch</p>
+                    <p class="text">I have designed and developed SketchModeling, a generative model that transforms 2D sketches into 3D models. </p>
+                    <p class="text">Recognizing the need for an AI-assisted tool that can directly generate model drafts from sketches, 
+                        I propose a solution that integrates the "sketch to image" and "image to 3D" processes. 
+                        This integration aims to minimize the inconvenience caused by model conversion and interfacing, 
+                        thereby enhancing the efficiency of AI tools and assisting designers and artists in utilizing AI more effectively.</p>
+                    <h2 class="sub-title">Design</h2>
+                    <p class="text">In conceptualizing the transformation from sketch to 3D model, I devised a linear workflow 
+                        that combines "sketch to image" and "image to 3D" processes. After reviewing relevant literature, 
+                        I finalized the workflow for SketchModeling, as shown below</p>
+                    <img src="/images/project18/model-structrue.png">
+                    <p class="text">SketchModeling consists of three subprocesses and five models, with the complete workflow as follows:</p>
+                    <p class="text">1.	The user inputs a sketch, a prompt, and several optional parameters.</p>
+                    <p class="text">2.	StableDiffusion and ControlNet generate an image that aligns with the prompt description and sketch shape.</p>
+                    <p class="text">3.	RMBG processes the image to produce a version with the main subject extracted and a blank background.</p>
+                    <p class="text">4.	InstantMesh generates a 3D model in .obj or .glb format based on the processed image.</p>
+                    <p class="text">5.	InstantMesh involves two steps: first, using the Zero123++ model to create a multi-view image from various perspectives, and second, generating a 3D model from this multi-view image.</p>
+                    <h2 class="sub-title">Outcomes</h2>
+                    <img src="/images/project18/outputs-result.png">
+                    <h2 class="sub-title">Demo Video</h2>
+                    <div class="ytb-video-container">
+                        <iframe src="https://www.youtube.com/embed/BoggiFAqmmY" allowfullscreen frameborder="0" class="ytb-video"></iframe>
+                    </div>
+                    <div class="next-page">
+                        <div class="former-page">
+                            <a href="/pages/projects/project16.html" class="button btn5"><i class="fa-solid fa-arrow-left"></i></a>
+                            <span class="text small">Procedurally Terrain Generation</span>
+                        </div>
+                        <div class="later-page">
+                            <span class="text small">Snowy Mountain Horseback Ride</span>
+                            <a href="/pages/projects/project10.html" class="button btn5"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="content-info-list">
+                        <ul>
+                            <li>
+                                <p class="sub-sub-title-small">Dev Env</p>
+                                <p class="notation">Win 11 + Conda + Python 3.12 + CUDA 12.4</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Team</p>
+                                <p class="notation">Personal Work</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Start and End</p>
+                                <p class="notation">2024.11 - 2024.12</p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Source Code</p>
+                                <p class="sub-sub-title-small"><a href="https://github.com/jiaqi404/SketchModeling" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------go-to-top------------------ -->
+    <div id="go-to-top">
+        <div class="container bottom">
+            <a href="#top" class="button btn5"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <!-- ---------------copyright------------------ -->
+    <div id="copyright">
+        <p class="notation" style="color: #fff;">copyright © 2025 Jiaqi Zhang</p>
+    </div>
+</body>
+</html>

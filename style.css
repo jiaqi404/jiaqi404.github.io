@@ -415,8 +415,8 @@ nav ul li a:hover::after{
 }
 
 .projects-list.project-page{
-    grid-gap: 24px;
-    margin: 24px 0;
+    grid-gap: 16px;
+    margin: 20px 0;
 }
 
 .projects-list a{
@@ -488,6 +488,16 @@ nav ul li a:hover::after{
     cursor: pointer;
     margin-left: auto; 
     margin-right: 0;
+}
+
+.layer-img{
+    margin-top: 16px;
+}
+
+.layer-img-container{
+    width: 32px; 
+    height: 32px; 
+    display: inline-block;
 }
 
 /* ---------------copyright----------------- */
@@ -634,6 +644,16 @@ nav ul li a:hover::after{
 .gallery.g2{
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(12, 4vw);
+}
+
+.gallery.g3{
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 4vw);
+}
+
+.gallery.g4{
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 4vw);
 }
 
 .gallery-item.item10{
