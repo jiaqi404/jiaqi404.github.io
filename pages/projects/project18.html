@@ -56,7 +56,21 @@
                     <p class="text">3.	RMBG processes the image to produce a version with the main subject extracted and a blank background.</p>
                     <p class="text">4.	InstantMesh generates a 3D model in .obj or .glb format based on the processed image.</p>
                     <p class="text">5.	InstantMesh involves two steps: first, using the Zero123++ model to create a multi-view image from various perspectives, and second, generating a 3D model from this multi-view image.</p>
+                    <h2 class="sub-title">Development</h2>
+                    <p class="sub-sub-title-small">Model Utilization</p>
+                    <p class="text">I primarily utilized the Diffusers library for this part of the development.</p>
+                    <p class="text">Hugging Face's Diffusers library offers a simple inference solution and is an efficient toolkit for 
+                        using and building diffusion models. Its core components include models and schedulers. 
+                        The Pipeline class in Diffusers bundles these components for convenience, significantly reducing manual configuration time.</p>
+                    <p class="text">All required models in this project are invoked through pipelines. During development, 
+                        I pre-constructed all necessary pipelines and downloaded all models before loading the Gradio interface to 
+                        prevent long loading times that could hinder user experience</p>
+                    <p class="sub-sub-title-small">Frontend Development</p>
+                    <p class="text">I used the Gradio library for frontend development. 
+                        Gradio makes it extremely convenient to build interfaces for AI-driven apps, 
+                        allowing us to implement all frontend and backend functionalities using Python code without writing HTML, CSS, or JavaScript.</p>
                     <h2 class="sub-title">Outcomes</h2>
+                    <p class="text">The model successfully generates 3D models from sketches, as shown in the following images:</p>
                     <img src="/images/project18/outputs-result.png">
                     <h2 class="sub-title">Demo Video</h2>
                     <div class="ytb-video-container">
@@ -81,16 +95,15 @@
                                 <p class="notation">Win 11 + Conda + Python 3.12 + CUDA 12.4</p>
                             </li>
                             <li>
-                                <p class="sub-sub-title-small">Team</p>
-                                <p class="notation">Personal Work</p>
-                            </li>
-                            <li>
-                                <p class="sub-sub-title-small">Start and End</p>
-                                <p class="notation">2024.11 - 2024.12</p>
+                                <p class="sub-sub-title-small">Duration</p>
+                                <p class="notation">2024.11-2024.12, 1 month</p>
                             </li>
                             <li>
                                 <p class="sub-sub-title-small">Source Code</p>
                                 <p class="sub-sub-title-small"><a href="https://github.com/jiaqi404/SketchModeling" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+                            </li>
+                            <li>
+                                <p class="sub-sub-title-small">Personal Work</p>
                             </li>
                         </ul>
                     </div>
