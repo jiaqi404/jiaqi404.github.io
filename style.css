@@ -400,6 +400,33 @@ nav ul li a:hover::after{
     display: flex;
 }
 
+.skill-logo {
+    position: relative;
+    display: inline-block;
+}
+.skill-tag {
+    visibility: hidden;
+    opacity: 0;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+    font-size: 13px;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+.skill-logo:hover .skill-tag {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* ---------------projects----------------- */
 
 #projects{
@@ -451,7 +478,7 @@ nav ul li a:hover::after{
 
 .layer{
     width: 100%;
-    height: 100%;
+    height: 0;
     background: rgba(255,255,255,0.7);
     position: absolute;
     left: 0;
@@ -467,7 +494,7 @@ nav ul li a:hover::after{
 }
 
 .project:hover .layer{
-    height: 0;
+    height: 100%;
 }
 
 .button{
@@ -502,13 +529,45 @@ nav ul li a:hover::after{
 }
 
 .layer-img{
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .layer-img-container{
     width: 32px; 
     height: 32px; 
     display: inline-block;
+}
+
+.project-card{
+    display: flex; 
+    align-items: stretch; 
+    margin-bottom: 32px; 
+    background: #fff; 
+    border: 1.5px solid;
+    /* border-radius: 16px;  */
+    overflow: hidden; 
+    /* box-shadow: 0 4px 16px rgba(0,0,0,0.08); */
+}
+
+.project-card-img{
+    flex: 1;
+    min-width: 0;
+}
+
+.project-card-img img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    /* aspect-ratio: 4/3;  */
+    display: block;
+}
+
+.project-card-info{
+    padding: 32px 0px 24px 32px; 
+    flex: 1; 
+    /* display: flex;  */
+    flex-direction: column; 
+    justify-content: space-between;
 }
 
 /* ---------------copyright----------------- */
