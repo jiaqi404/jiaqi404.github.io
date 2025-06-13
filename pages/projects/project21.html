@@ -22,11 +22,12 @@
     <div id="header">
         <div class="container">
             <nav>
-                <a href="/index.html"><span class="sub-sub-sub-title">Jiaqi Zhang</span></a>
-                <ul>
-                    <li><a href="/pages/about.html"><span class="text">About</span></a></li>
-                    <li><a href="/pages/projects.html"><span class="text">Projects</span></a></li>
-                </ul>
+                <a href="#"><span class="sub-sub-sub-title">Jiaqi :D</span></a>
+                <!-- <ul>
+                    <li><a href="#about"><span class="text">ABOUT</span></a></li>
+                    <li><a href="#projects"><span class="text">PROJECTS</span></a></li>
+                    <li><a href="#blog"><span class="text">BLOG</span></a></li>
+                </ul> -->
             </nav>
         </div>
     </div>
@@ -34,24 +35,28 @@
     <div id="content">
         <div class="container contents" style="padding-top: 48px;">
             <div class="content-head" style="background-image: url(/images/project21/GUI.png);">
-                <a href="/pages/projects.html" class="button btn4"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="/index.html#projects" class="button btn4"><i class="fa-solid fa-arrow-left"></i></a>
             </div>
             <div class="row">
                 <div class="content-left">
-                    <h1 class="title">Textures Finder</h1>
-                    <p class="sub-sub-title-small">AI-Driven Texture Search Tool</p>
-                    <p class="text">TexturesFinder is a tool for fast and accurate matching in texture databases using computer vision and 
-                        similarity search algorithms. Users can input a local texture or randomly select a test image, set parameters, 
-                        and search for similar textures within a dataset of 220 textures. 
-                        Retrieved textures can be opened directly from their local paths for further operations. 
-                        You can check my Github repo for further information. The link is on the right.</p>
-                    <h2 class="sub-title">Technical Implementation</h2>
+                    <h1 class="title">AI贴图查找工具</h1>
+                    <p class="sub-sub-title-small">基于VIT与Ball Tree的相似贴图匹配模型</p>
+                    <p class="text">本工具旨在通过计算机视觉技术与高效相似性检索算法，实现贴图数据库的快速精准匹配。
+                    用户可以输入一张本地贴图，或随机抽取一张测试图像，决定相关参数，在220张贴图的数据集中查找相似贴图。
+                    用户可以点开查找到的贴图，进入它们的本地位置进行进一步操作。 
+                    用户需要决定两个参数，一个是返回相似图片的数量，一个是查找精度及速度，后者主要决定了随机投影时降至的维度数</p>
+                    <p class="text">本工具使用python开发，基于Huggingface Datasets与Transformers，使用在ImageNet21k上预训练过的
+                    Vision Transformer (ViT) 对候选集与测试图像进行特征提取，然后通过Ball Tree 方法进行基于欧几里得距离的相似性检索，来得到最终的结果。</p>
+                    <p class="text">有关本工具实现的具体技术细节，可以阅读本工具的<a href="https://drive.google.com/file/d/1Lob-QajfYFNk3Fzou_jyqUrfEFZ5SKBS/view?usp=sharing" target="_blank"><u>技术文档</u></a>。</p>
+                    <h2 class="sub-title">匹配算法</h2>
+                    <p class="text">本工具的匹配算法可以简单概述为：将候选集中的所有图片与需要检测相似贴图的图片进行特征提取，
+                    然后对它们的特征进行相似性检测，最终输出最相似的图片，如下图所示：</p>
                     <img src="/images/project21/flow.png">
-                    <h2 class="sub-title">Search Results</h2>
+                    <h2 class="sub-title">查找结果展示</h2>
                     <img src="/images/project21/similar_images_1.png">
                     <img src="/images/project21/similar_images_2.png">
                     <img src="/images/project21/similar_images_3.png">
-                    <h2 class="sub-title">Demo Video</h2>
+                    <h2 class="sub-title">演示视频</h2>
                     <div class="ytb-video-container">
                         <iframe src="https://www.youtube.com/embed/MBkHMXWXuT8" allowfullscreen frameborder="0" class="ytb-video"></iframe>
                     </div>
@@ -70,19 +75,20 @@
                     <div class="content-info-list">
                         <ul>
                             <li>
-                                <p class="sub-sub-title-small">Dev Env</p>
+                                <p class="sub-sub-title-small">开发环境</p>
                                 <p class="notation">Win 11 + Conda + Python 3.12</p>
                             </li>
                             <li>
-                                <p class="sub-sub-title-small">Duration</p>
-                                <p class="notation">2025.03, 1 week</p>
+                                <p class="sub-sub-title-small">制作时间</p>
+                                <p class="notation">2025年3月，个人作品，一周时间完成</p>
                             </li>
                             <li>
-                                <p class="sub-sub-title-small">Source Code</p>
+                                <p class="sub-sub-title-small">源码</p>
                                 <p class="sub-sub-title-small"><a href="https://github.com/jiaqi404/TexturesFinder" target="_blank"><i class="fa-brands fa-github"></i></a></p>
                             </li>
                             <li>
-                                <p class="sub-sub-title-small">Personal Work</p>
+                                <p class="sub-sub-title-small">技术文档</p>
+                                <p class="sub-sub-title-small"><a href="https://drive.google.com/file/d/1Lob-QajfYFNk3Fzou_jyqUrfEFZ5SKBS/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-pdf"></i></a></p>
                             </li>
                         </ul>
                     </div>
