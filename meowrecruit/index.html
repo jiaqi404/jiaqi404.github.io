@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Game Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ECABA6;
+            --secondary: #B3B8DD;
+            --dark: #283C50;
+            --light: #f8f9fa;
+            --accent: #BDDDF4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 32px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 4rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .lang-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        
+        .lang-toggle:hover {
+            transform: rotate(15deg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(110, 68, 255, 0.1), rgba(68, 217, 255, 0.1));
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary);
+            animation: bounce 2s infinite;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: absolute;
+            bottom: 8rem;
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .learn-more-btn:hover {
+            /* background: darken(var(--primary), 5%);
+            color: var(--primary); */
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Studio Section */
+        .studio {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            /* background: linear-gradient(to right, var(--primary), var(--secondary)); */
+            border-radius: 2px;
+        }
+        
+        .studio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .studio-image {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .studio-image img {
+            width: 100%;
+            transition: transform 0.5s;
+        }
+        
+        .studio-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .studio-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 5rem 2rem;
+            background-color: #f0f3f8;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-photo {
+            height: 280px;
+            overflow: hidden;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        
+        .member-photo img {
+            width: 80%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .member-info h4 {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-btn {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+            background: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            /* margin-bottom: 0.5rem; */
+            margin: 0 0.15rem 0.5rem 0.15rem;
+            /* transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: absolute;
+            bottom: 8rem;
+            z-index: 10; */
+            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); */
+        }
+        
+        .member-info p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .member-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .member-links a {
+            /* text-decoration: none; */
+            font-size: 0.9rem;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .member-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Game Section */
+        .game {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .game-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .game-intro p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .game-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            aspect-ratio: 16 / 9;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .game-screenshot {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .game-screenshot img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+        
+        .game-screenshot:hover img {
+            transform: scale(1.05);
+        }
+        
+        .game-links {
+            text-align: center;
+        }
+        
+        .game-links h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .platform-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .platform-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.3s;
+        }
+        
+        .platform-link:hover {
+            transform: scale(1.1);
+        }
+
+        .platform-link span{
+            font-size: 0.9rem;
+        }
+        
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .steam {
+            color: #1b2838;
+        }
+        
+        .itch {
+            color: #fa5c5c;
+        }
+        
+        .xiaohongshu {
+            color: #fe2c55;
+        }
+        
+        .bilibili {
+            color: #00a1d6;
+        }
+        
+        .youtube {
+            color: #ff0000;
+        }
+
+        .email {
+            color: #333;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .studio-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('lang-toggle');
+            const zhElements = document.querySelectorAll('.zh');
+            const enElements = document.querySelectorAll('.en');
+            let currentLang = 'zh';
+            
+            toggleBtn.addEventListener('click', function() {
+                if (currentLang === 'zh') {
+                    zhElements.forEach(el => el.classList.add('hidden'));
+                    enElements.forEach(el => el.classList.remove('hidden'));
+                    document.documentElement.lang = 'en';
+                    currentLang = 'en';
+                    toggleBtn.textContent = '中';
+                } else {
+                    enElements.forEach(el => el.classList.add('hidden'));
+                    zhElements.forEach(el => el.classList.remove('hidden'));
+                    document.documentElement.lang = 'zh';
+                    currentLang = 'zh';
+                    toggleBtn.textContent = 'EN';
+                }
+            });
+        });
+    </script>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="images/chillgame_logo.png" alt="Logo">
+                <!-- <span class="zh">Chill Game</span>
+                <span class="en hidden">Chill Game</span> -->
+            </a>
+            <div class="nav-links">
+                <a href="#studio" class="zh">关于我们</a>
+                <a href="#studio" class="en hidden">About Us</a>
+                <a href="#team" class="zh">团队成员</a>
+                <a href="#team" class="en hidden">Team</a>
+                <a href="#game" class="zh">猫猫直聘</a>
+                <a href="#game" class="en hidden">Meow Recruit</a>
+            </div>
+            <div class="lang-toggle" id="lang-toggle">EN</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('images/cover.png'); background-size: cover;">
+        <a href="#game" class="learn-more-btn">
+            <span class="zh">了解更多</span>
+            <span class="en hidden">Learn More</span>
+        </a>
+        <!-- <h1 class="zh">Chill Game 工作室</h1>
+        <h1 class="en hidden">Chill Game Studio</h1> -->
+        <!-- <p class="zh"><b>来自香港理工大学的四人游戏开发团队，我们做了一款休闲策略游戏<br>《猫猫直聘》。</b></p>
+        <p class="en hidden">A four-member game development team from Hong Kong PolyU. We made a game called <b>Meow Recruit</b>.</p> -->
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Studio Section -->
+    <section id="studio" class="studio">
+        <h2 class="section-title zh">关于我们</h2>
+        <h2 class="section-title en hidden">About Us</h2>
+        <div class="studio-content">
+            <div class="studio-image">
+                <img src="images/chillgame.jpg" alt="Studio Image">
+            </div>
+            <div class="studio-text">
+                <p class="zh">
+                    Chill Game 工作室成立于2024年，我们结缘于香港理工大学 MSc in Innovative Multimedia Entertainment 专业。《猫猫直聘》是我们的首款游戏，也是我们的研究生毕设作品。
+                    <br><br>
+                    我们是一个非全职的、充满激情和创意的独立游戏开发团队，团队所有人都有一份全职工作，做游戏只是我们的业余爱好。我们专注于开发具有独特玩法和艺术风格的游戏，致力于为玩家带来轻松愉快且引人入胜的游戏体验。
+                </p>
+                <p class="en hidden">
+                    Chill Game Studio was established in 2024, and we met at the MSc in Innovative Multimedia Entertainment program at Hong Kong PolyU. "Meow Recruit" is our first game and also our graduate project.
+                    <br><br>
+                    We are a non-full-time, passionate, and creative indie game development team. All team members have a full-time job, and making games is just our hobby. We focus on developing games with unique gameplay and art styles, aiming to provide players with a relaxing and engaging gaming experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="team-container">
+            <h2 class="section-title zh">团队成员</h2>
+            <h2 class="section-title en hidden">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/马.png" alt="Programmer">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="zh">家琪</h3>
+                        <h3 class="en hidden">Jiaqi</h3>
+                        <div class="member-btn">
+                            <span class="zh">程序开发</span>
+                            <span class="en hidden">Programmer</span>
+                        </div>
+                        <div class="member-btn">
+                            <span class="zh">项目管理</span>
+                            <span class="en hidden">Project Manager</span>
+                        </div>
+                        <!-- <h4 class="zh">程序开发</h4> -->
+                        <!-- <h4 class="en hidden">Programmer</h4> -->
+                        <p class="zh">家琪负责游戏所有系统的程序实现，也承担项目管理的责任。她热爱拆解和解决复杂的问题，这会让她很有成就感。</p>
+                        <p class="en hidden">Jiaqi is responsible for programming implementation of all game systems and also takes on project management responsibilities. She loves solving complex problems, which gives her a sense of accomplishment.</p>
+                        <div class="member-links">
+                            <a href="https://jiaqi404.github.io/" class="zh">个人主页</a>
+                            <a href="https://jiaqi404.github.io/" class="en hidden">Portfolio</a>
+                            <a href="https://github.com/jiaqi404" class="zh">Github</a>
+                            <a href="https://github.com/jiaqi404" class="en hidden">Github</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/鼠.png" alt="Designer">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="zh">咕咕</h3>
+                        <h3 class="en hidden">Gugu</h3>
+                        <div class="member-btn">
+                            <span class="zh">游戏策划</span>
+                            <span class="en hidden">Game Designer</span>
+                        </div>
+                        <!-- <h4 class="zh">游戏策划</h4>
+                        <h4 class="en hidden">Game Designer</h4> -->
+                        <p class="zh">咕咕负责所有的策划工作，包括玩法设计、内容设计、数值设计、等等。她擅长创造有趣的游戏机制和游戏体验。</p>
+                        <p class="en hidden">Gugu is responsible for all planning work, including gameplay design, content design, and numerical design. She is good at creating interesting game mechanics and experience.</p>
+                        <div class="member-links">
+                            <a href="https://www.xiaohongshu.com/user/profile/58422ec182ec39634ba6f201" class="zh">小红书</a>
+                            <a href="https://www.xiaohongshu.com/user/profile/58422ec182ec39634ba6f201" class="en hidden">RedNote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/兔.png" alt="2D Artist">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="zh">Emo</h3>
+                        <h3 class="en hidden">Emo</h3>
+                        <div class="member-btn">
+                            <span class="zh">2D美术</span>
+                            <span class="en hidden">2D Artist</span>
+                        </div>
+                        <!-- <h4 class="zh">2D美术</h4>
+                        <h4 class="en hidden">2D Artist</h4> -->
+                        <p class="zh">Emo负责所有的2D美术工作，包括角色设计、UI设计、场景设计、美宣、等等。她擅长可爱的画风，为游戏创造了独特的视觉风格。</p>
+                        <p class="en hidden">Emo is responsible for all 2D art work, including character design, UI design, scene design, and promotional art design. She is good at creating cute illustrations and has brought a unique visual style to the game.</p>
+                        <div class="member-links">
+                            <a href="https://www.xiaohongshu.com/user/profile/6108b9b400000000010032e6" class="zh">小红书</a>
+                            <a href="https://www.xiaohongshu.com/user/profile/6108b9b400000000010032e6" class="en hidden">RedNote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/猫.png" alt="3D Artist">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="zh">梓欣</h3>
+                        <h3 class="en hidden">Zixin</h3>
+                        <div class="member-btn">
+                            <span class="zh">3D美术</span>
+                            <span class="en hidden">3D Artist</span>
+                        </div>
+                        <!-- <h4 class="zh">3D美术</h4>
+                        <h4 class="en hidden">3D Artist</h4> -->
+                        <p class="zh">梓欣负责所有的3D美术工作，包括建模、绑定、动画制作、等等。她拥有丰富的行业经验，擅长制作精美易用的3D美术资产。</p>
+                        <p class="en hidden">Zixin is responsible for all 3D art work, including modeling, animation, and determining rendering effects. She is good at creating beautiful and easy-to-use 3D art assets, making the game visuals more expressive.</p>
+                        <div class="member-links">
+                            <a href="https://m.bilibili.com/space/4333593" class="zh">小红书</a>
+                            <a href="https://m.bilibili.com/space/4333593" class="en hidden">RedNote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game">
+        <h2 class="section-title zh">猫猫直聘</h2>
+        <h2 class="section-title en hidden">Meow Recruit</h2>
+        
+        <div class="game-intro">
+            <p class="zh">
+                《猫猫直聘》是一款以职场为主题的休闲策略游戏。你将化身动物公司的HR，通过招募员工、安排工位、优化团队、组织培训和建设设施，带领公司达成业绩目标。你是真正的HR大师吗？
+            </p>
+            <p class="en hidden">
+                Meow Recruit is a casual strategy game where you play as HR in an animal company. Recruit employees, arrange workstations, optimize your team, and build facilities to maximize company's profits. Are you the real HR master?
+            </p>
+        </div>
+
+        <div class="game-links">
+            <h3 class="zh">立即加入愿望单！</h3>
+            <h3 class="en hidden">Add to Wishlist Now!</h3>
+            <iframe src="https://store.steampowered.com/widget/3811320/" frameborder="0" width="646" height="190" style="margin-bottom: 3rem;"></iframe>
+        </div>
+        
+        <div class="game-showcase">
+            <div class="game-screenshot">
+                <img src="images/实机画面1.jpg" alt="Game Screenshot 1">
+            </div>
+            <div class="game-screenshot">
+                <img src="images/实机画面3.jpg" alt="Game Screenshot 2">
+            </div>
+            <div class="game-screenshot">
+                <img src="images/实机画面5.jpg" alt="Game Screenshot 3">
+            </div>
+            <div class="game-screenshot">
+                <img src="images/实际画面6.jpg" alt="Game Screenshot 4">
+            </div>
+        </div>
+        
+        <div class="game-links">
+            <h3 class="zh">通过各个平台联系我们！</h3>
+            <h3 class="en hidden">Contact Us on Various Platforms!</h3>
+
+            <div class="platform-links">
+                <a href="https://store.steampowered.com/app/3811320/_/" class="platform-link">
+                    <div class="platform-icon steam">
+                        <i class="fab fa-steam"></i>
+                    </div>
+                    <span>Steam</span>
+                </a>
+                
+                <a href="https://chill-game.itch.io/meow-recruit" class="platform-link">
+                    <div class="platform-icon itch">
+                        <i class="fab fa-itch-io"></i>
+                    </div>
+                    <span>itch.io</span>
+                </a>
+                
+                <a href="https://www.xiaohongshu.com/user/profile/681af22b000000000d00b714" class="platform-link">
+                    <div class="platform-icon xiaohongshu">
+                        <!-- <i class="fas fa-hashtag"></i> -->
+                        <img src="https://static.cdnlogo.com/logos/r/73/rednote-xiaohongshu_800.png" style="width: 50%;">
+                    </div>
+                    <span class="zh">小红书</span>
+                    <span class="en hidden">RedNote</span>
+                </a>
+                
+                <!-- <a href="#" class="platform-link">
+                    <div class="platform-icon bilibili">
+                        <i class="fa-brands fa-bilibili"></i>
+                    </div>
+                    <span class="zh">哔哩哔哩</span>
+                    <span class="en hidden">Bilibili</span>
+                </a>
+                
+                <a href="#" class="platform-link">
+                    <div class="platform-icon youtube">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <span>YouTube</span>
+                </a> -->
+
+                <a href="mailto:chillgame.pr@gmail.com" class="platform-link">
+                    <div class="platform-icon email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="zh">邮箱</span>
+                    <span class="en hidden">Email</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="game-links" style="margin-top: 3rem;">
+            <h3 class="zh">媒体包</h3>
+            <h3 class="en hidden">Press Kit</h3>
+
+            <div class="platform-links">
+                <a href="#" class="platform-link">
+                    <div class="platform-icon email">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+                </a>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+            </div> -->
+            <div class="copyright">
+                <p class="zh">© 2025 Chill Game 工作室. 保留所有权利。</p>
+                <p class="en hidden">© 2025 Chill Game Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html></div></p></section></div>
