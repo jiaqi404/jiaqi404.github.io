@@ -100,7 +100,8 @@
         
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
+            /* min-height: 100vh; */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -109,9 +110,11 @@
             position: relative;
             overflow: hidden;
             text-align: center;
+            background-image: url('images/cover.png'); 
+            background-size: cover;
         }
         
-        .hero::before {
+        /* .hero::before {
             content: "";
             position: absolute;
             top: 0;
@@ -120,7 +123,7 @@
             height: 100%;
             background: linear-gradient(45deg, rgba(110, 68, 255, 0.1), rgba(68, 217, 255, 0.1));
             z-index: -1;
-        }
+        } */
         
         .hero h1 {
             font-size: 5rem;
@@ -156,7 +159,7 @@
             text-decoration: none;
             transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             position: absolute;
-            bottom: 8rem;
+            bottom: 7rem;
             z-index: 10;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -425,6 +428,12 @@
             margin-bottom: 0.5rem;
             font-size: 1.5rem;
         }
+
+        .wishlist-btn{
+            width: 100%; 
+            max-width: 646px; 
+            margin: 0 auto;
+        }
         
         .steam {
             color: #1b2838;
@@ -492,11 +501,17 @@
             }
             
             .game-showcase {
+                /* grid-template-columns: 1fr; */
+                aspect-ratio: unset;
                 grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+                background-position: center;
+            }
             .hero h1 {
                 font-size: 3rem;
             }
@@ -563,7 +578,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background-image: url('images/cover.png'); background-size: cover;">
+    <section class="hero">
         <a href="#game" class="learn-more-btn">
             <span class="zh">了解更多</span>
             <span class="en hidden">Learn More</span>
@@ -611,20 +626,16 @@
                         <img src="images/马.png" alt="Programmer">
                     </div>
                     <div class="member-info">
-                        <h3 class="zh">家琪</h3>
-                        <h3 class="en hidden">Jiaqi</h3>
+                        <h3 class="zh">加急</h3>
+                        <h3 class="en hidden">Jaji</h3>
                         <div class="member-btn">
                             <span class="zh">程序开发</span>
                             <span class="en hidden">Programmer</span>
                         </div>
-                        <div class="member-btn">
-                            <span class="zh">项目管理</span>
-                            <span class="en hidden">Project Manager</span>
-                        </div>
                         <!-- <h4 class="zh">程序开发</h4> -->
                         <!-- <h4 class="en hidden">Programmer</h4> -->
-                        <p class="zh">家琪负责游戏所有系统的程序实现，也承担项目管理的责任。她热爱拆解和解决复杂的问题，这会让她很有成就感。</p>
-                        <p class="en hidden">Jiaqi is responsible for programming implementation of all game systems and also takes on project management responsibilities. She loves solving complex problems, which gives her a sense of accomplishment.</p>
+                        <p class="zh">加急负责游戏所有系统的程序实现，也承担项目管理的责任。她热爱拆解和解决复杂的问题，这会让她很有成就感。</p>
+                        <p class="en hidden">Jaji is responsible for programming implementation of all game systems and also takes on project management responsibilities. She loves solving complex problems, which gives her a sense of accomplishment.</p>
                         <div class="member-links">
                             <a href="https://jiaqi404.github.io/" class="zh">个人主页</a>
                             <a href="https://jiaqi404.github.io/" class="en hidden">Portfolio</a>
@@ -639,16 +650,16 @@
                         <img src="images/鼠.png" alt="Designer">
                     </div>
                     <div class="member-info">
-                        <h3 class="zh">咕咕</h3>
-                        <h3 class="en hidden">Gugu</h3>
+                        <h3 class="zh">阿月浑子</h3>
+                        <h3 class="en hidden">Ayuehunzi</h3>
                         <div class="member-btn">
                             <span class="zh">游戏策划</span>
                             <span class="en hidden">Game Designer</span>
                         </div>
                         <!-- <h4 class="zh">游戏策划</h4>
                         <h4 class="en hidden">Game Designer</h4> -->
-                        <p class="zh">咕咕负责所有的策划工作，包括玩法设计、内容设计、数值设计、等等。她擅长创造有趣的游戏机制和游戏体验。</p>
-                        <p class="en hidden">Gugu is responsible for all planning work, including gameplay design, content design, and numerical design. She is good at creating interesting game mechanics and experience.</p>
+                        <p class="zh">阿月浑子负责所有的策划工作，包括玩法设计、内容设计、数值设计、等等。她擅长创造有趣的游戏机制和游戏体验。</p>
+                        <p class="en hidden">Ayuehunzi is responsible for all planning work, including gameplay design, content design, and numerical design. She is good at creating interesting game mechanics and experience.</p>
                         <div class="member-links">
                             <a href="https://www.xiaohongshu.com/user/profile/58422ec182ec39634ba6f201" class="zh">小红书</a>
                             <a href="https://www.xiaohongshu.com/user/profile/58422ec182ec39634ba6f201" class="en hidden">RedNote</a>
@@ -692,7 +703,7 @@
                         <!-- <h4 class="zh">3D美术</h4>
                         <h4 class="en hidden">3D Artist</h4> -->
                         <p class="zh">梓欣负责所有的3D美术工作，包括建模、绑定、动画制作、等等。她拥有丰富的行业经验，擅长制作精美易用的3D美术资产。</p>
-                        <p class="en hidden">Zixin is responsible for all 3D art work, including modeling, animation, and determining rendering effects. She is good at creating beautiful and easy-to-use 3D art assets, making the game visuals more expressive.</p>
+                        <p class="en hidden">Zixin is responsible for all 3D art work, including modeling, animation, and determining rendering effects. She has extensive industry experience and is skilled at creating beautiful and user-friendly 3D art assets.</p>
                         <div class="member-links">
                             <a href="https://m.bilibili.com/space/4333593" class="zh">小红书</a>
                             <a href="https://m.bilibili.com/space/4333593" class="en hidden">RedNote</a>
@@ -720,7 +731,9 @@
         <div class="game-links">
             <h3 class="zh">立即加入愿望单！</h3>
             <h3 class="en hidden">Add to Wishlist Now!</h3>
-            <iframe src="https://store.steampowered.com/widget/3811320/" frameborder="0" width="646" height="190" style="margin-bottom: 3rem;"></iframe>
+            <div class="wishlist-btn">
+                <iframe src="https://store.steampowered.com/widget/3811320/" frameborder="0" width="100%" height="190" style="margin-bottom: 3rem;"></iframe>
+            </div>
         </div>
         
         <div class="game-showcase">
