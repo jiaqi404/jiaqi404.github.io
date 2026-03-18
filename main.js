@@ -1,5 +1,5 @@
 // ===== 国际化数据 =====
-let currentLang = 'en';
+let currentLang = 'zh';
 
 const i18nData = {
   en: {
@@ -8,8 +8,8 @@ const i18nData = {
     'nav.work': 'Projects',
     'nav.insights': 'Blog',
     // Hero
-    'hero.subtitle': 'Game Designer & Developer',
-    'hero.intro': 'Hi, I am Jiaqi.<br>Game designer & developer.<br>I am open to new opportunities and collaborations.',
+    'hero.subtitle': 'Hello, I am',
+    'hero.intro': 'Hi, I am Jiaqi.<br>Game designer & developer.<br>Looking for gameplay/system design opportunities.',
     'hero.job': 'Intern gameplay designer at <strong class="text-text-primary font-semibold">Tencent</strong>',
     'hero.edu': 'Graduated from <strong class="text-text-primary font-semibold">BUPT, PolyU</strong>',
     'hero.scroll': 'SCROLL',
@@ -39,8 +39,8 @@ const i18nData = {
     'nav.work': '项目',
     'nav.insights': '博客',
     // Hero
-    'hero.subtitle': '游戏设计师 & 开发者',
-    'hero.intro': '你好，我是家琪！<br>游戏设计师 & 开发者<br>我正在寻找新的工作和合作机会',
+    'hero.subtitle': 'Hello, I am',
+    'hero.intro': '你好，我是家琪！<br>我是一名游戏设计师和开发者，<br>正在寻找玩法/系统策划的工作机会。',
     'hero.job': '<strong class="text-text-primary font-semibold">腾讯</strong> 玩法策划实习',
     'hero.edu': '毕业于 <strong class="text-text-primary font-semibold">北京邮电大学、香港理工大学</strong>',
     'hero.scroll': 'SCROLL',
@@ -51,11 +51,11 @@ const i18nData = {
     'about.exp_title': '实习经历',
     // Work
     'work.subtitle': 'Featured Projects',
-    'work.title': '我设计和开发独立游戏...',
+    'work.title': '我设计和制作独立游戏...',
     'work.more': 'More on itch.io',
     // Insights
     'insights.subtitle': 'Thoughts & Articles',
-    'insights.title': '我也乐于分享我的想法...',
+    'insights.title': '我乐于分享对游戏的思考...',
     'insights.more': 'More on My Blog',
     // Contact
     'contact.subtitle': 'Get in Touch',
@@ -117,15 +117,16 @@ const gamesData = [
     title_zh: '猫猫直聘',
     genre: '🥉 2025 Tencent Game Awards University Track Third Prize',
     cover: 'project1.jpg',
-    genre_color: '#fff5ceff',
+    genre_color: 'linear-gradient(to right, #ffcc6e, #ffed78)',
+    genre_text_color: '#2c2c2cd4',
     genre_zh: '🥉 2025腾讯游戏创作大赛高校赛道三等奖',
     description: 'Casual strategy roguelike DBG + backpack management game<br>Pick Cards, Arrange Cubicles - Who is the real Human Resources Master?',
     description_zh: 'Roguelike DBG + 背包管理玩法的休闲策略游戏<br>选卡牌，摆工位——谁才是真正的HR大师？',
     gradient: 'gradient-meow',
     icon: '🐱',
     links: [
-      { label: 'Website', label_zh: '官网', url: 'https://jiaqi404.github.io/chillgame/', icon: 'ri-global-line' },
       { label: 'Steam', label_zh: 'Steam', url: 'https://store.steampowered.com/app/3811320/_/', icon: 'ri-steam-fill' },
+      { label: 'Website', label_zh: '官网', url: 'https://jiaqi404.github.io/chillgame/', icon: 'ri-global-line' },
       { label: 'itch.io', label_zh: 'itch.io', url: 'https://chill-game.itch.io/meow-recruit', icon: 'ri-gamepad-line' }
     ]
   },
@@ -148,7 +149,6 @@ const gamesData = [
     title: 'I Bubble You Guess',
     title_zh: 'I Bubble You Guess',
     cover: 'project3.png',
-    genre_color: '#fff5ceff',
     genre: '🏆 2025 Global Game Jam HK Site Most Unique Concept',
     genre_zh: '🏆 2025GGJ香港站最独特概念奖',
     description: 'Bubble-themed 3D Pictionary game<br>Create bubble creatures like SpongeBob!',
@@ -290,6 +290,7 @@ function renderGameCards() {
   grid.innerHTML = gamesData.map((game, index) => {
     const genreText = isZh ? game.genre_zh : game.genre;
     const genreStyle = game.genre_color ? `background: ${game.genre_color};` : '';
+    const genreTextColorStyle = game.genre_text_color ? `color: ${game.genre_text_color};` : '';
     const firstUrl = game.links && game.links[0] ? game.links[0].url : '#';
     return `
     <div class="game-card reveal" style="transition-delay: ${index * 0.1}s" role="link" tabindex="0"
@@ -300,11 +301,11 @@ function renderGameCards() {
       </div>
       <div class="game-card-content">
       <div class="flex flex-wrap items-center gap-2 mb-2">
-        ${genreText ? `<span class="game-tag" style="${genreStyle}">${genreText}</span>` : ''}
+        ${genreText ? `<span class="game-tag" style="${genreStyle}${genreTextColorStyle}">${genreText}</span>` : ''}
       </div>
       <h3 class="text-2xl lg:text-[1.7rem] font-display font-bold mb-1 tracking-tight leading-tight">${isZh ? game.title_zh : game.title}</h3>
       <div class="w-8 h-[2px] bg-accent-color/60 mb-2 rounded-full"></div>
-      <p class="text-sm text-text-secondary leading-relaxed mb-3 font-light">${isZh ? game.description_zh : game.description}</p>
+      <p class="text-sm text-text-secondary leading-relaxed mb-3 font-regular">${isZh ? game.description_zh : game.description}</p>
       <div class="flex flex-wrap gap-4">
         ${game.links.map(link => `
         <a href="${link.url}" class="game-link" onclick="event.stopPropagation();" target="_blank" rel="noopener noreferrer">
