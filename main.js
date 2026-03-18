@@ -116,7 +116,7 @@ const gamesData = [
     title: 'Meow Recruit',
     title_zh: '猫猫直聘',
     genre: '🥉 2025 Tencent Game Awards University Track Third Prize',
-    cover: 'project1.jpg',
+    cover: 'project1.gif',
     genre_color: 'linear-gradient(to right, #ffcc6e, #ffed78)',
     genre_text_color: '#2c2c2cd4',
     genre_zh: '🥉 2025腾讯游戏创作大赛高校赛道三等奖',
