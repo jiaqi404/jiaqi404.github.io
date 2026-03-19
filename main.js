@@ -211,8 +211,8 @@ const articlesData = [
     url:"https://hellojiaqi.notion.site/3-322cf023e7d380388112e3121606c134"
   },
   {
-    title: 'Why the Mahjong We Played This Afternoon Was Not Fun: Strategic Degradation Under Pressure',
-    title_zh: '为什么我们今天下午打的麻将不好玩：论压力下的策略退化',
+    title: 'Why the Mahjong We Played This Afternoon Was Not Fun: A Brief Discussion on Strategy Degradation in Games and How to Fix It',
+    title_zh: '为什么我们今天下午打的麻将不好玩：浅谈游戏中的策略退化与改善的方法',
     tags: ['GameTalk', 'ExperienceEngine'],
     tags_zh: ['游戏杂谈', '体验引擎'],
     excerpt: 'I can always apply the Experience Engine in weird places.',
