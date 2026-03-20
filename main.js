@@ -213,9 +213,9 @@ const articlesData = [
   {
     title: 'Why the Mahjong We Played This Afternoon Was Not Fun: A Brief Discussion on Strategy Degradation in Games and How to Fix It',
     title_zh: '为什么我们今天下午打的麻将不好玩：浅谈游戏中的策略退化与改善的方法',
-    tags: ['GameTalk', 'ExperienceEngine'],
-    tags_zh: ['游戏杂谈', '体验引擎'],
-    excerpt: 'I can always apply the Experience Engine in weird places.',
+    tags: ['GameTalk'],
+    tags_zh: ['游戏杂谈'],
+    excerpt: 'I can always refer to Designing Games: A Guide to Engineering Experiences in weird places.',
     excerpt_zh: '关于我总能在奇怪的地方活学活用《体验引擎》这件事。',
     date: 'Nov 2025',
     date_zh: '2025年11月',
